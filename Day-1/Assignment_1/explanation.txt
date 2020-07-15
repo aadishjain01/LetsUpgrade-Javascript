@@ -1,0 +1,85 @@
+                Console Object
+
+The console object provides us with several different methods, like :
+
+-log()
+-error()
+-warn()
+-clear()
+-time() and timeEnd()
+-table()
+-count()
+-group() and groupEnd()
+-custom console logs
+
+--------------------------------------------------------------------------
+
+1. console.log()
+
+    Mainly used to log(print) the output to the console. We can put any type inside the log(), be it a string, array, object, boolean etc.
+
+    Examples:
+        // console.log() method 
+        console.log('abc');  
+        console.log(1); 
+        console.log(true); 
+        console.log(null); 
+        console.log(undefined);  
+        console.log([1, 2, 3, 4]); // array inside log 
+        console.log({a:1, b:2, c:3}); // object inside log 
+
+2. console.error()
+
+    Used to log error message to the console. Useful in testing of code. By default the error message will be highlighted with red color.
+
+    Example:
+        // console.error() method  
+        console.error('This is a simple error'); 
+
+
+3. console.warn()
+
+    Used to log warning message to the console. By default the warning message will be highlighted with yellow color.
+
+    Example:
+         // console.warn() method  
+        console.warn('This is a warning.');
+
+4. console.time() and console.timeEnd()
+
+    Whenever we want to know the amount of time spend by a block or a function, we can make use of the time() and timeEnd() methods provided by the javascript console object. They take a label which must be same, and the code inside can be anything( function, object, simple console).
+
+    Example:
+        // console.time() and console.timeEnd() method  
+        console.time('abc'); 
+        let fun =  function(){ 
+        console.log('fun is running'); 
+         } 
+        let fun2 = function(){ 
+        console.log('fun2 is running..'); 
+        } 
+        fun(); // calling fun(); 
+        fun2(); // calling fun2(); 
+        console.timeEnd('abc'); 
+
+    In the above code sample, we can see that the label is ‘abc’ which is same for both the time() and the timeEnd() method. If we increase the amount of code inside the block defined by these methods, then the time will increase. It is also worth remembering that the time returned to the console will be in milliseconds and might be different each time we refresh the page.
+
+
+5. console.table()
+
+    This method allows us to generate a table inside a console. The input must be an array or an object which will be shown as a table.
+
+    Example:
+        // console.table() method 
+        console.table({'a':1, 'b':2}); 
+
+6. Custom Console Logs
+
+    User can add Styling to the console logs in order to make logs Custom . The Syntax for it is to add the css styling as a parameter to the logs which will replace %c in the logs as shown in the example below .
+
+    Example:
+        const spacing = '10px'; 
+         const styles =  
+            `padding: ${spacing}; background-color: white; color: green; font-style:  
+            italic; border: 1px solid black; font-size: 2em;`; 
+        console.log('%cGeeks for Geeks', styles); 
